@@ -1,29 +1,47 @@
 <template>
   <div class="options-container">
     <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
+      <li
+        v-for="pokemon in pokemons"
+        :key="pokemon.id"
+        @click="$emit('selectionPokemon', pokemon.id)"
+      >
+        {{ pokemon.name.toUpperCase() }}
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    pokemons: {
+      type: Array,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style scope>
 ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   list-style-type: none;
+  padding: 16px;
 }
 li {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
   margin-bottom: 10px;
-  width: 250px;
+  width: 200px;
 }
 
 li:hover {
