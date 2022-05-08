@@ -45,9 +45,9 @@ export default {
       this.showPokemon = true;
       this.showAnswer = true;
       if (selectedId === this.pokemon.id) {
-        this.message = `Correcto, ${(this.pokemon.name).toUpperCase()}`;
+        this.message = `Correcto, ${this.pokemon.name.toUpperCase()}`;
       } else {
-        this.message = `Oops, era ${(this.pokemon.name).toUpperCase()}`;
+        this.message = `Oops, era ${this.pokemon.name.toUpperCase()}`;
       }
     },
     newGame() {
