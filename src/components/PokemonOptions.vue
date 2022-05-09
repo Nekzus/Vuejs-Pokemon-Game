@@ -6,7 +6,7 @@
         :key="pokemon.id"
         @click="$emit('selectionPokemon', pokemon.id)"
       >
-        {{ pokemon.name.toUpperCase() }}
+        {{ pokemon.name }}
       </li>
     </ul>
   </div>
